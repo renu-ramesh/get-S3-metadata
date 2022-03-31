@@ -1,0 +1,56 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"$ref": "#/definitions/RequestParams",
+	"title": "RequestParams",
+	"definitions": {
+		"Credentials": {
+			"properties": {
+				"accessKey": {
+					"type": "string"
+				},
+				"secretKey": {
+					"type": "string"
+				}
+			},
+			"additionalProperties": false,
+			"type": "object"
+		},
+		"RequestParams": {
+			"required": [
+				"source"
+			],
+			"properties": {
+				"source": {
+					"$schema": "http://json-schema.org/draft-04/schema#",
+					"$ref": "#/definitions/Source"
+				},
+				"credentials": {
+					"$schema": "http://json-schema.org/draft-04/schema#",
+					"$ref": "#/definitions/Configure"
+				}
+			},
+			"additionalProperties": false,
+			"type": "object"
+		},
+		"Source": {
+			"required": [
+				"path",
+				"bucket",
+				"region"
+			],
+			"properties": {
+				"path": {
+					"type": "string"
+				},
+				"bucket": {
+					"type": "string"
+				},
+				"region": {
+					"type": "string"
+				}
+			},
+			"additionalProperties": false,
+			"type": "object"
+		}
+	}
+}
